@@ -19,4 +19,9 @@ public class LevelSelect : MonoBehaviour
     {
         SceneManager.LoadScene(targetSceneName);
     }
+
+    public void OpenWebsite(string url)
+    {
+        Application.OpenURL(url);
+    }
 }
