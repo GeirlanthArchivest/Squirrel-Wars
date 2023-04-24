@@ -12,10 +12,21 @@ public class Launcher : MonoBehaviour
     [SerializeField] float trajectoryTimeStep = 0.05f;
     [SerializeField] int trajectoryStepCount = 15;
 
+    [SerializeField] float FireBoundaryLow = 75;
+    [SerializeField] float FireBoundaryHigh = 100000;
+
+
+
     Vector2 velocity, startMousePos, currentMousePos;
 
     private void Update()
     {
+        //stops shooting being possible in deadzones values in fireboundaries
+        if (Input.mousePosition.x < FireBoundaryLow || Input.mousePosition.x > FireBoundaryHigh)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
