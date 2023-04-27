@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Launcher : MonoBehaviour
 {
@@ -22,13 +23,18 @@ public class Launcher : MonoBehaviour
     private void Update()
     {
         //stops shooting being possible in deadzones values in fireboundaries
-        if (Input.mousePosition.x < FireBoundaryLow || Input.mousePosition.x > FireBoundaryHigh)
+        /*if (Input.mousePosition.x < FireBoundaryLow || Input.mousePosition.x > FireBoundaryHigh)
+        {
+            return;
+        }*/
+        if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
 
         if (Input.GetMouseButtonDown(0))
         {
+            
             startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
