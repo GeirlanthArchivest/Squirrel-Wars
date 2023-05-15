@@ -12,33 +12,30 @@ public class Launcher : MonoBehaviour
     [SerializeField] float launchForce = 1.5f;
     [SerializeField] float trajectoryTimeStep = 0.05f;
     [SerializeField] int trajectoryStepCount = 15;
-
-    [SerializeField] float FireBoundaryLow = 75;
-    [SerializeField] float FireBoundaryHigh = 100000;
-
-
+    public bool playerTurn;
 
     Vector2 velocity, startMousePos, currentMousePos;
 
+    private void Start()
+    {
+        playerTurn = true;
+    }
+
     private void Update()
     {
-        //stops shooting being possible in deadzones values in fireboundaries
-        /*if (Input.mousePosition.x < FireBoundaryLow || Input.mousePosition.x > FireBoundaryHigh)
-        {
-            return;
-        }*/
+        
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && playerTurn == true)
         {
             
             startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && playerTurn == true)
         {
             currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             velocity = (startMousePos = currentMousePos) * launchForce;
@@ -46,7 +43,7 @@ public class Launcher : MonoBehaviour
             DrawTrajectory();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && playerTurn == true)
         {
             FireProjectile();
         }
@@ -72,6 +69,18 @@ public class Launcher : MonoBehaviour
         Transform pr = Instantiate(ProjectilePrefab, spawnPoint.position, Quaternion.identity);
 
         pr.GetComponent<Rigidbody2D>().velocity = velocity;
+        StartCoroutine(ChangeValueAfterDelay());
     }
+    
+    private IEnumerator ChangeValueAfterDelay()
+    {
+        yield return new WaitForSeconds(5f);
 
+        playerTurn = false;
+
+    }
+    public void SetVariable(bool newValue)
+    {
+        playerTurn = newValue;
+    }
 }
