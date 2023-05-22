@@ -14,6 +14,9 @@ public class Launcher : MonoBehaviour
     [SerializeField] int trajectoryStepCount = 15;
     public bool playerTurn;
 
+
+    [SerializeField] EnemyAi enemy;
+
     Vector2 velocity, startMousePos, currentMousePos;
 
     private void Start()
@@ -23,7 +26,7 @@ public class Launcher : MonoBehaviour
 
     private void Update()
     {
-        
+
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -69,17 +72,18 @@ public class Launcher : MonoBehaviour
         Transform pr = Instantiate(ProjectilePrefab, spawnPoint.position, Quaternion.identity);
 
         pr.GetComponent<Rigidbody2D>().velocity = velocity;
-        StartCoroutine(ChangeValueAfterDelay());
+        playerTurn = false;
+        StartCoroutine(ChangeTurnAfterDelay());
     }
     
-    private IEnumerator ChangeValueAfterDelay()
+    private IEnumerator ChangeTurnAfterDelay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
-        playerTurn = false;
+        enemy.enemyTurn = true;
 
     }
-    public void SetVariable(bool newValue)
+    public void SetPlayerTurn(bool newValue)
     {
         playerTurn = newValue;
     }

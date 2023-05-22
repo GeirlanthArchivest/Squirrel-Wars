@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    //variable storing the lifetime of an object
-    public float life = 3;
+    private float life = 2;
 
     void Awake()
     {   //destroy the projectile after reaching value of life

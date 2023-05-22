@@ -9,22 +9,24 @@ public class EnemyAi : MonoBehaviour
     //Prefab of the projectile
     public GameObject projectilePrefab;          
     //The force applied to shoot the projectile
-    public float shootingForce = 50f;             
+    private float shootingForce;             
     public Launcher Launcher;
+    public bool enemyTurn = false;
 
     private void Update()
     {
-        bool playerTurn = Launcher.playerTurn;
-
-        if (playerTurn == false)
+        if (enemyTurn == true)
         {
-            Launcher.SetVariable(true);
-            Shoot();
+            StartCoroutine(Shoot());
         }
+
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
+        enemyTurn = false;
+        shootingForce = Random.Range(10f, 20f);
+
         Vector2 direction = target.position - transform.position;
 
         // Instantiate the projectile
@@ -34,5 +36,12 @@ public class EnemyAi : MonoBehaviour
         // Apply a force to shoot the projectile towards the target
         projectileRb.AddForce(direction.normalized * shootingForce, ForceMode2D.Impulse);
 
+
+        yield return new WaitForSeconds(3f);
+
+
+        Launcher.SetPlayerTurn(true);
+
     }
+
 }
