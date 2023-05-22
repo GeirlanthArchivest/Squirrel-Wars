@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class EnemyAi : MonoBehaviour
 {
-    public Transform target;                     // The target position to shoot at
-    public GameObject projectilePrefab;          // Prefab of the projectile
-    public float shootingForce = 10f;             // The force applied to shoot the projectile
+    //The target position to shoot at
+    public Transform target;                     
+    //Prefab of the projectile
+    public GameObject projectilePrefab;          
+    //The force applied to shoot the projectile
+    public float shootingForce = 50f;             
     public Launcher Launcher;
 
     private void Update()

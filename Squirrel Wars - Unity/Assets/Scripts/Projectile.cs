@@ -5,6 +5,14 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 
+    public float life = 3;
+
+    void Awake()
+    {
+        Destroy(gameObject, life);
+    }
+
+
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -1108,7 +1108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 767731216}
   projectilePrefab: {fileID: 8276101708036344636, guid: 77740241174e1ce4cbcdb3a524005d7f, type: 3}
-  shootingForce: 10
+  shootingForce: 50
   Launcher: {fileID: 1910202907}
 --- !u!1 &947390217
 GameObject:
