@@ -1020,9 +1020,10 @@ GameObject:
   - component: {fileID: 857430136}
   - component: {fileID: 857430135}
   - component: {fileID: 857430137}
+  - component: {fileID: 857430138}
   m_Layer: 0
   m_Name: TestEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1107,9 +1108,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 767731216}
-  projectilePrefab: {fileID: 8276101708036344636, guid: 77740241174e1ce4cbcdb3a524005d7f, type: 3}
+  projectilePrefab: {fileID: 8276101708036344636, guid: d62b53d2da535b84b8ea3d34d431e189, type: 3}
   Launcher: {fileID: 1910202907}
   enemyTurn: 0
+--- !u!70 &857430138
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857430134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!1 &947390217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,7 +1842,7 @@ GameObject:
   - component: {fileID: 1910202909}
   m_Layer: 0
   m_Name: TestPlayer
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
