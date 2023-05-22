@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 
-    public float life = 3;
+    private float life = 2;
 
     void Awake()
     {
