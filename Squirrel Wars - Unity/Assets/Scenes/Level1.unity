@@ -2830,6 +2830,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: log (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6789407408099146573, guid: 84e3179a06378d246be2c47402cbdafa, type: 3}
+      propertyPath: m_TagString
+      value: EnemyWall
+      objectReference: {fileID: 0}
     - target: {fileID: 6789407408099146574, guid: 84e3179a06378d246be2c47402cbdafa, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -2960,6 +2964,14 @@ PrefabInstance:
       propertyPath: Launcher
       value: 
       objectReference: {fileID: 1910202907}
+    - target: {fileID: 7444632021145638728, guid: 8a2cccf1a27fbba438e177d460441fef, type: 3}
+      propertyPath: maxForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444632021145638728, guid: 8a2cccf1a27fbba438e177d460441fef, type: 3}
+      propertyPath: minForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7444632021145638729, guid: 8a2cccf1a27fbba438e177d460441fef, type: 3}
       propertyPath: m_RootOrder
       value: 8

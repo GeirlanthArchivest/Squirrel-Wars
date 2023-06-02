@@ -11,6 +11,8 @@ public class EnemyAi : MonoBehaviour
     //The force applied to shoot the projectile
     private float shootingForce;             
     public Launcher Launcher;
+    public int minForce;
+    public int maxForce;
 
     public bool enemyTurn = false;
 
@@ -26,7 +28,7 @@ public class EnemyAi : MonoBehaviour
     private IEnumerator Shoot()
     {
         enemyTurn = false;
-        shootingForce = Random.Range(10f, 20f);
+        shootingForce = Random.Range(minForce, maxForce);
 
         Vector2 direction = target.position - transform.position;
 

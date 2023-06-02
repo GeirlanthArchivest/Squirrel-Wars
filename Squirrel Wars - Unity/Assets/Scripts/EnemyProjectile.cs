@@ -5,10 +5,28 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     private float life = 2;
+    private string tagToIgnore = "EnemyWall";
 
     void Awake()
     {   //destroy the projectile after reaching value of life
         Destroy(gameObject, life);
+    }
+
+    private void Start()
+    {
+        // Get all colliders in the scene
+        Collider2D[] allColliders = FindObjectsOfType<Collider2D>();
+
+        // Loop through each collider
+        foreach (Collider2D collider in allColliders)
+        {
+            // Check if the collider's tag matches the tag to ignore
+            if (collider.tag == tagToIgnore)
+            {
+                // Ignore collision between this object's collider and the collider with the specified tag
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collider, true);
+            }
+        }
     }
 
 

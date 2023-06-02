@@ -1300,7 +1300,8 @@ MonoBehaviour:
   trajectoryTimeStep: 0.05
   trajectoryStepCount: 15
   playerTurn: 0
-  enemy: {fileID: 800265622}
+  enemies:
+  - {fileID: 800265622}
 --- !u!120 &1219020301
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1340,7 +1341,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1841015035
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
