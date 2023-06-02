@@ -15,7 +15,7 @@ public class Launcher : MonoBehaviour
     public bool playerTurn;
 
 
-    [SerializeField] EnemyAi enemy;
+    [SerializeField] EnemyAi[] enemies;
 
     Vector2 velocity, startMousePos, currentMousePos;
 
@@ -41,7 +41,7 @@ public class Launcher : MonoBehaviour
         if (Input.GetMouseButton(0) && playerTurn == true)
         {
             currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            velocity = (startMousePos = currentMousePos) * launchForce;
+            velocity = (startMousePos - currentMousePos) * launchForce;
 
             DrawTrajectory();
         }
@@ -80,7 +80,10 @@ public class Launcher : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        enemy.enemyTurn = true;
+        foreach (EnemyAi enemy in enemies)
+        {
+            enemy.enemyTurn = true;
+        }
 
     }
     public void SetPlayerTurn(bool newValue)

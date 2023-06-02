@@ -11,6 +11,7 @@ public class EnemyAi : MonoBehaviour
     //The force applied to shoot the projectile
     private float shootingForce;             
     public Launcher Launcher;
+
     public bool enemyTurn = false;
 
     private void Update()

@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 95660433087429333}
   - component: {fileID: 8796081771152299890}
   - component: {fileID: 6896682656009066740}
+  - component: {fileID: 6761471338342839828}
   - component: {fileID: 2509426953875447497}
   m_Layer: 0
   m_Name: PlayerProjectile
@@ -152,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: -1162386881
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1be31412c4284ec479444bc323092e57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,6 +201,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
+--- !u!114 &6761471338342839828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276101708036344636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169292f3a0883564cafb4f1fbdd2a51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2509426953875447497
 MonoBehaviour:
   m_ObjectHideFlags: 0
