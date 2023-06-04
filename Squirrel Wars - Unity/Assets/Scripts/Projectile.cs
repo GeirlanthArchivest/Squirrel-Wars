@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     private float life = 2;
     private string tagToIgnore = "Wall";
+    public int hazardDamage = 1;
 
     void Awake()
     {   //destroy the projectile after reaching value of life
@@ -33,10 +34,19 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
+       if(collision.gameObject.CompareTag("Boss"))
+        {
+            //Code to handle collision 
+            Collider2D collider = collision.collider;
+            BossHealth player = collider.GetComponent<BossHealth>();
+            if (player != null)
+            {
+                player.ChangeHealth(-hazardDamage);
+                Destroy(gameObject);
+            }
+        }
         // this checks what object type the projectile has collided with
-        if(collision.gameObject.CompareTag("EnemyWall") ||
-           collision.gameObject.CompareTag("Enemy"))
+        else if(collision.gameObject.CompareTag("EnemyWall") || collision.gameObject.CompareTag("Enemy"))
         {
             // destroys the object the projectile collided with
             Destroy(collision.gameObject);

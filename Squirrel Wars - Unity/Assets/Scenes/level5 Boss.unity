@@ -2067,6 +2067,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6587388711381990524, guid: 1ab86fdbc16a8d4418eb763faa948b80, type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 1371289738}
     - target: {fileID: 6587388711381990525, guid: 1ab86fdbc16a8d4418eb763faa948b80, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2135,6 +2139,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+--- !u!114 &1371289738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7444632021145638728, guid: 8a2cccf1a27fbba438e177d460441fef, type: 3}
+  m_PrefabInstance: {fileID: 1918063010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371289736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee121a38fef11384ababc45f30eb5b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1376603154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3844,6 +3859,10 @@ PrefabInstance:
     - target: {fileID: 7444632021145638727, guid: 8a2cccf1a27fbba438e177d460441fef, type: 3}
       propertyPath: m_Name
       value: EnemySquirrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7444632021145638727, guid: 8a2cccf1a27fbba438e177d460441fef, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 7444632021145638728, guid: 8a2cccf1a27fbba438e177d460441fef, type: 3}
       propertyPath: target

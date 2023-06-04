@@ -10,6 +10,7 @@ TagManager:
   - Character
   - Floor
   - EnemyWall
+  - Boss
   layers:
   - Default
   - TransparentFX

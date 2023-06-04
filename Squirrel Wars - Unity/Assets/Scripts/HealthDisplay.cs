@@ -9,21 +9,21 @@ public class HealthDisplay : MonoBehaviour
     Slider healthBar;
 
     //Player health information
-    BossHealth Boss;
+    BossHealth EnemySquirrel;
 
     // Start is called before the first frame update
     void Start()
     {
         healthBar = GetComponent<Slider>();
 
-        Boss = FindObjectOfType<BossHealth>();
+        EnemySquirrel = FindObjectOfType<BossHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float currentHealth = Boss.GetHealth();
-        float maxHealth = Boss.startingHealth;
+        float currentHealth = EnemySquirrel.GetHealth();
+        float maxHealth = EnemySquirrel.startingHealth;
 
         healthBar.value = currentHealth / maxHealth;
     }

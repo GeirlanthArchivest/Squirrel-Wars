@@ -849,6 +849,8 @@ MonoBehaviour:
   target: {fileID: 0}
   projectilePrefab: {fileID: 8276101708036344636, guid: d62b53d2da535b84b8ea3d34d431e189, type: 3}
   Launcher: {fileID: 0}
+  minForce: 0
+  maxForce: 0
   enemyTurn: 0
 --- !u!61 &7444632021145638731
 BoxCollider2D:
