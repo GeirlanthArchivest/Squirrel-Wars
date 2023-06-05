@@ -13,6 +13,9 @@ public class Launcher : MonoBehaviour
     [SerializeField] float trajectoryTimeStep = 0.05f;
     [SerializeField] int trajectoryStepCount = 15;
     public bool playerTurn;
+    public float touchCooldown;
+    private float lastButtonTouchTime;
+    private bool processingInput = false;
 
 
     [SerializeField] EnemyAi[] enemies;
@@ -24,6 +27,11 @@ public class Launcher : MonoBehaviour
         playerTurn = true;
     }
 
+    public void onScreenButtonTouched()
+    {
+        lastButtonTouchTime = Time.time;
+    }
+
     private void Update()
     {
 
@@ -32,13 +40,13 @@ public class Launcher : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0) && playerTurn == true)
+        if (Input.GetMouseButtonDown(0) && playerTurn == true && Time.time >= lastButtonTouchTime + touchCooldown)
         {
-            
+            processingInput = true;
             startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        if (Input.GetMouseButton(0) && playerTurn == true)
+        if (Input.GetMouseButton(0) && playerTurn == true && Time.time >= lastButtonTouchTime + touchCooldown && processingInput == true)
         {
             currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             velocity = (startMousePos - currentMousePos) * launchForce;
@@ -46,9 +54,10 @@ public class Launcher : MonoBehaviour
             DrawTrajectory();
         }
 
-        if (Input.GetMouseButtonUp(0) && playerTurn == true)
+        if (Input.GetMouseButtonUp(0) && playerTurn == true && Time.time >= lastButtonTouchTime + touchCooldown && processingInput == true)
         {
             FireProjectile();
+            processingInput = false;
         }
     }
 
@@ -78,7 +87,7 @@ public class Launcher : MonoBehaviour
     
     private IEnumerator ChangeTurnAfterDelay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
 
         foreach (EnemyAi enemy in enemies)
         {
