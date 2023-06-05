@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class EnemyDetect2 : MonoBehaviour
+
+public class EnemyDetect3 : MonoBehaviour
 {
     void Update()
     {
@@ -15,7 +16,7 @@ public class EnemyDetect2 : MonoBehaviour
         {
 
             // loads specified scene
-            SceneManager.LoadScene("LevelChange2");
+            SceneManager.LoadScene("LevelChange3");
 
         }
 
