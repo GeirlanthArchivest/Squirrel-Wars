@@ -6,14 +6,15 @@ public class BossHealth : MonoBehaviour
 {
     public int startingHealth = 5;
     private int currentHealth;
+
     public void Kill()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); //Destroys boss object when function is called
     }
 
     public void Awake()
     {
-        currentHealth = startingHealth;
+        currentHealth = startingHealth; //Sets health amount
     }
 
     public void ChangeHealth(int changeAmount)

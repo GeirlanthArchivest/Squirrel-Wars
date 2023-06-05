@@ -16,7 +16,7 @@ public class EnemyDetect4 : MonoBehaviour
         {
 
             // loads specified scene
-            SceneManager.LoadScene("LevelChange3");
+            SceneManager.LoadScene("LevelChange4");
 
         }
 

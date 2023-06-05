@@ -10,14 +10,14 @@ public class CameraMove : MonoBehaviour
     public void CameraMoveRight()
     {
         Vector3 temp = transform.position;
-        temp.x += 0.02f;
+        temp.x += 0.06f;
         GetComponent<Camera>().transform.position = temp;
     }
 
     public void CameraMoveLeft()
     {
         Vector3 temp = transform.position;
-        temp.x -= 0.02f;
+        temp.x -= 0.06f;
         GetComponent<Camera>().transform.position = temp;
     }
 

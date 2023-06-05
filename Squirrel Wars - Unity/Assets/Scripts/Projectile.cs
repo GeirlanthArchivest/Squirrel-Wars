@@ -41,6 +41,7 @@ public class Projectile : MonoBehaviour
             BossHealth player = collider.GetComponent<BossHealth>();
             if (player != null)
             {
+                //Lose health equal to hazard damage then destroys projectile
                 player.ChangeHealth(-hazardDamage);
                 Destroy(gameObject);
             }
