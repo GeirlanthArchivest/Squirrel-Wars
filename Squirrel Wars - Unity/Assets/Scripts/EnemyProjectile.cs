@@ -46,6 +46,7 @@ public class EnemyProjectile : MonoBehaviour
 
 
         }
+        //Check if the projectile is colliding with an enemy and returns if true
         else if (collision.gameObject.CompareTag("Enemy"))
         {
             return;

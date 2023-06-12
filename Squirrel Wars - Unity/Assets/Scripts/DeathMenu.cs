@@ -8,7 +8,7 @@ public class DeathMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //defines found as variable and checks for Enemy tag
+        //defines found as variable and checks for Cgaracter tag
         GameObject found = GameObject.FindWithTag("Character");
 
         //checks if there isnt any enemies
