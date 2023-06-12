@@ -19,16 +19,16 @@ public class BossHealth : MonoBehaviour
 
     public void ChangeHealth(int changeAmount)
     {
-        currentHealth = currentHealth + changeAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
+        currentHealth = currentHealth + changeAmount; //Changed health value
+        currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth); //Keeps health value between 0 and the starting health value
         if (currentHealth == 0)
         {
-            Kill();
+            Kill(); //Calls the kill function
         }
     }
 
     public int GetHealth()
     {
-        return currentHealth;
+        return currentHealth; //Returns health value
     }
 }

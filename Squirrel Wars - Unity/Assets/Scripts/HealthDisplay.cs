@@ -14,17 +14,21 @@ public class HealthDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Attaches slider component to variable
         healthBar = GetComponent<Slider>();
 
+        //Gets boss health and assigns it to EnemySquirrel variable
         EnemySquirrel = FindObjectOfType<BossHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Gets current and max health
         float currentHealth = EnemySquirrel.GetHealth();
         float maxHealth = EnemySquirrel.startingHealth;
 
+        //Updates slider value
         healthBar.value = currentHealth / maxHealth;
     }
 }
